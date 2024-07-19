@@ -12,6 +12,7 @@ import Testimonial from "@/components/home/home-v6/Testimonial";
 import About from "@/components/home/home-v6/About";
 import ExploreCities from "@/components/home/home-v6/ExploreCities";
 import FeaturedListings from "@/components/home/home-v6/FeatuerdListings";
+import MortgageCalculator from "@/components/home/home-v6/MortgageCalculator";
 import Link from "next/link";
 
 export const metadata = {
@@ -236,6 +237,11 @@ const Home_V6 = () => {
           </div>
           {/* End .row */}
         </div>
+      </section>
+
+      <section className="container mx-auto p-4">
+        <h2 className="text-4xl font-bold text-center mb-8">Mortgage Calculator</h2>
+        <MortgageCalculator />
       </section>
 
       {/* Featured Properties */}
