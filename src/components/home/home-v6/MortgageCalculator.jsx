@@ -3,20 +3,20 @@
 import { useState, useEffect } from 'react';
 
 const MortgageCalculator = () => {
-  const [principal, setPrincipal] = useState('');
+  const [totalPrice, setTotalPrice] = useState('');
   const [downPayment, setDownPayment] = useState('');
   const [loanPeriod, setLoanPeriod] = useState(25);
   const [interestRate, setInterestRate] = useState('');
   const [monthlyPayment, setMonthlyPayment] = useState(0);
 
   useEffect(() => {
-    if (principal && downPayment && interestRate) {
+    if (totalPrice && downPayment && interestRate) {
       calculatePayment();
     }
-  }, [principal, downPayment, loanPeriod, interestRate]);
+  }, [totalPrice, downPayment, loanPeriod, interestRate]);
 
   const calculatePayment = () => {
-    const loanAmount = principal - downPayment;
+    const loanAmount = totalPrice - downPayment;
     const numberOfPayments = loanPeriod * 12;
     const monthlyInterestRate = parseFloat(interestRate.replace(',', '.')) / 100 / 12;
     const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
@@ -27,13 +27,14 @@ const MortgageCalculator = () => {
     <div className="flex">
       <div className="w-1/2 p-4">
         <div className="mb-4">
-          <label className="block text-gray-700">Principal</label>
+          <label className="block text-gray-700">Total Price</label>
           <input
             type="number"
-            value={principal}
-            onChange={(e) => setPrincipal(e.target.value)}
-            className="mt-1 p-2 w-full border rounded"
+            value={totalPrice}
+            onChange={(e) => setTotalPrice(e.target.value)}
+            className="mt-1 p-2 w-full border rounded appearance-none"
             min="0"
+            step="1"
           />
         </div>
         <div className="mb-4">
@@ -42,8 +43,9 @@ const MortgageCalculator = () => {
             type="number"
             value={downPayment}
             onChange={(e) => setDownPayment(e.target.value)}
-            className="mt-1 p-2 w-full border rounded"
+            className="mt-1 p-2 w-full border rounded appearance-none"
             min="0"
+            step="1"
           />
         </div>
         <div className="mb-4">
@@ -63,7 +65,11 @@ const MortgageCalculator = () => {
           <input
             type="text"
             value={interestRate}
-            onChange={(e) => setInterestRate(e.target.value)}
+            onChange={(e) => {
+              if (/^\d*[,]?\d*$/.test(e.target.value)) {
+                setInterestRate(e.target.value);
+              }
+            }}
             className="mt-1 p-2 w-full border rounded"
           />
         </div>
