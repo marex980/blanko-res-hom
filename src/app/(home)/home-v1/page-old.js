@@ -1,25 +1,26 @@
+import Explore from "@/components/common/Explore";
+import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
-import Footer from "@/components/home/home-v10/footer";
-import ApartmentType from "@/components/home/home-v10/ApartmentType";
-import WhyChoose from "@/components/home/home-v10/why-choose";
+import About from "@/components/home/home-v1/About";
+import ApartmentType from "@/components/home/home-v1/ApartmentType";
+import CallToActions from "@/components/common/CallToActions";
+import FeaturedListings from "@/components/home/home-v1/FeatuerdListings";
+import Header from "@/components/home/home-v1/Header";
+import Partner from "@/components/common/Partner";
+import PopularListings from "@/components/home/home-v1/PopularListings";
+import PropertiesByCities from "@/components/home/home-v1/PropertiesByCities";
+import Testimonial from "@/components/home/home-v1/Testimonial";
+import Hero from "@/components/home/home-v1/hero";
+import Image from "next/image";
 import Blog from "@/components/common/Blog";
 import Link from "next/link";
-import Map from "@/components/home/home-v10/Map";
-import Header from "@/components/home/home-v10/Header";
-import FilterWithProperties from "@/components/home/home-v10/filter-with-property";
-import Explore from "@/components/common/Explore";
-import FeaturedListings from "@/components/home/home-v10/FeatuerdListings";
-import FunFact from "@/components/home/home-v10/FunFact";
-import PropertiesByCities from "@/components/home/home-v10/PropertiesByCities";
-import Testimonial from "@/components/home/home-v10/Testimonial";
-import Agents from "@/components/home/home-v10/Agents";
-import BannerSlider from "@/components/home/home-v10/BannerSlider";
+import PopulerProperty from "@/components/home/home-v1/PopulerProperty";
 
 export const metadata = {
-  title: "Home v10 || Homez - Real Estate NextJS Template",
+  title: "FSC - Real Estate NextJS Template",
 };
 
-const Home_V10 = () => {
+const Home_V1 = () => {
   return (
     <>
       {/* Main Header Nav */}
@@ -30,32 +31,100 @@ const Home_V10 = () => {
       <MobileMenu />
       {/* End Mobile Nav  */}
 
-      {/* Hero map finder */}
-      <section className="p-0">
-        <div className="container-fluid p-0">
+      {/* Home Banner Style V1 */}
+      <section className="home-banner-style1 p0">
+        <div className="home-style1">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-11 mx-auto">
+                <Hero />
+              </div>
+            </div>
+          </div>
+          {/* End .container */}
+
+          <a href="#explore-property">
+            <div className="mouse_scroll animate-up-4">
+              <Image
+                width={20}
+                height={105}
+                src="/images/about/home-scroll.png"
+                alt="scroll image"
+              />
+            </div>
+          </a>
+        </div>
+      </section>
+      {/* End Home Banner Style V1 */}
+
+      {/* Explore Apartment */}
+      <section id="explore-property" className="pb90 pb30-md">
+        <div className="container">
+          <div className="row  justify-content-between align-items-center">
+            <div className="col-auto">
+              <div
+                className="main-title"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h2 className="title">Explore Apartment Types</h2>
+                <p className="paragraph">
+                  Get some Inspirations from 1800+ skills
+                </p>
+              </div>
+            </div>
+            {/* End header */}
+
+            <div className="col-auto mb30">
+              <div className="row align-items-center justify-content-center">
+                <div className="col-auto">
+                  <button className="prev__active swiper_button">
+                    <i className="far fa-arrow-left-long" />
+                  </button>
+                </div>
+                {/* End prev */}
+
+                <div className="col-auto">
+                  <div className="pagination swiper--pagination pagination__active" />
+                </div>
+                {/* End pagination */}
+
+                <div className="col-auto">
+                  <button className="next__active swiper_button">
+                    <i className="far fa-arrow-right-long" />
+                  </button>
+                </div>
+                {/* End Next */}
+              </div>
+            </div>
+            {/* End .col for navigation and pagination */}
+          </div>
+          {/* End .row */}
+
           <div className="row">
             <div className="col-lg-12">
-              <div className="home10-map">
-                <Map />
+              <div
+                className="explore-apartment-slider"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <ApartmentType />
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* End Hero map finder */}
+      {/* End Explore Apartment */}
 
-      {/* Filter with properties */}
-      <section className="pt-0 pb110 pb50-md bgc-white">
+      {/* Explore Apartment */}
+      <section className="pt0 pb90 pb10-md">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12">
-              <FilterWithProperties />
-            </div>
-          </div>
-          {/* End .row */}
-
-          <div className="row mt100 mt60-lg ">
-            <div className="col-lg-6 m-auto">
+            <div
+              className="col-lg-6 m-auto"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <div className="main-title text-center">
                 <h2 className="title">See How Realton Can Help</h2>
                 <p className="paragraph">
@@ -70,12 +139,11 @@ const Home_V10 = () => {
             <Explore />
           </div>
         </div>
-        {/* End .container */}
       </section>
-      {/* End Filter with properties */}
+      {/* End Explore Apartment */}
 
       {/* Featured Listings */}
-      <section className="pb50-md bgc-f7">
+      <section className="bgc-f7">
         <div className="container">
           <div className="row align-items-center" data-aos="fade-up">
             <div className="col-lg-9">
@@ -108,36 +176,8 @@ const Home_V10 = () => {
       </section>
       {/* End Featured Listings */}
 
-      {/* Why Chose Us */}
-      <section className="pb-0">
-        <div className="container">
-          <div
-            className="row align-items-md-center"
-            data-aos="fade-left"
-            data-aos-delay="100"
-          >
-            <WhyChoose />
-          </div>
-        </div>
-      </section>
-      {/* End Why Chose Us */}
-
-      {/* Funfact */}
-      <section className="pb-0 pt60">
-        <div className="container">
-          <div
-            className="row justify-content-center"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <FunFact />
-          </div>
-        </div>
-      </section>
-      {/* End Funfact */}
-
       {/* Explore property-city */}
-      <section className="pb50-md">
+      <section className="pb40-md pb90">
         <div className="container">
           <div
             className="row align-items-center"
@@ -156,10 +196,10 @@ const Home_V10 = () => {
 
             <div className="col-lg-3">
               <div className="text-start text-lg-end mb-3">
-                <Link className="ud-btn2" href="/map-v4">
+                <a className="ud-btn2" href="#">
                   See All Cities
                   <i className="fal fa-arrow-right-long" />
-                </Link>
+                </a>
               </div>
             </div>
             {/* End col-lg-3 */}
@@ -178,36 +218,17 @@ const Home_V10 = () => {
       </section>
       {/* End Explore property-city */}
 
-      {/* Explore Apartment */}
-      <section className="pb30-md bgc-thm">
+      {/* <!-- About Us --> */}
+      <section className="pt0 pb40-md">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-6 mx-auto text-center">
-              <div className="main-title wow fadeInUp" data-aos-delay="300">
-                <h2 className="title text-white">Explore Apartment Types</h2>
-                <p className="paragraph text-white">
-                  Get some Inspirations from 1800+ skills
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* End .row */}
-
-          <div className="row">
-            <div className="col-lg-12">
-              <div
-                className="explore-apartment-slider"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <ApartmentType />
-              </div>
-            </div>
-          </div>
-          {/* End .row */}
+          <About />
         </div>
       </section>
-      {/* End Explore Apartment */}
+      {/*  <!-- End About Us --> */}
+
+      {/* Popular Property */}
+      <PopulerProperty />
+      {/* End  Popular Property */}
 
       {/* Our Testimonials */}
       <section className="pb100 pb50-md bgc-thm-light">
@@ -268,76 +289,11 @@ const Home_V10 = () => {
       </section>
       {/* End Our Testimonials */}
 
-      {/* Hero Slide */}
-      <div className="banner-wrapper main-banner-wrapper  position-relative banner-style-one ">
-        <BannerSlider />
-      </div>
-      {/* Edn Hero Slide */}
-
-      {/* Exclusive Agents */}
-      <section className="pb80 pb50-md">
-        <div className="container">
-          <div className="row  justify-content-between align-items-center">
-            <div className="col-auto">
-              <div
-                className="main-title"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <h2 className="title">Our Exclusive Agetns</h2>
-                <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
-                </p>
-              </div>
-            </div>
-            {/* End header */}
-
-            <div className="col-auto mb30">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-auto">
-                  <button className="agent_prev__active swiper_button">
-                    <i className="far fa-arrow-left-long" />
-                  </button>
-                </div>
-                {/* End prev */}
-
-                <div className="col-auto">
-                  <div className="pagination swiper--pagination agent_pagination__active" />
-                </div>
-                {/* End pagination */}
-
-                <div className="col-auto">
-                  <button className="agent_next__active swiper_button">
-                    <i className="far fa-arrow-right-long" />
-                  </button>
-                </div>
-                {/* End Next */}
-              </div>
-            </div>
-            {/* End .col for navigation and pagination */}
-          </div>
-          {/* End .row */}
-
-          <div className="row">
-            <div className="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-              <div className="property-city-slider">
-                <Agents />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Exclusive Agents */}
-
       {/* Explore Blog */}
-      <section className="pt-0 pb90 pb20-md">
+      <section className="pb90 pb20-md">
         <div className="container">
           <div className="row">
-            <div
-              className="col-lg-6 m-auto"
-              data-aos="fade-up"
-              data-aos-delay="0"
-            >
+            <div className="col-lg-6 m-auto" data-aos="fade-up">
               <div className="main-title text-start text-md-center">
                 <h2 className="title">From Our Blog</h2>
                 <p className="paragraph">
@@ -353,9 +309,35 @@ const Home_V10 = () => {
           </div>
           {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
-      {/* End Explore Blog */}
+      {/* Explore Blog */}
+
+      {/* Our Partners */}
+      <section className="our-partners pt0">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12" data-aos="fade-up">
+              <div className="main-title text-center">
+                <h6>Trusted by the world’s best</h6>
+              </div>
+            </div>
+            <div className="col-lg-12 text-center">
+              <div
+                className="dots_none nav_none"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <Partner />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* End Our Partners */}
+
+      {/* Our CTA */}
+      <CallToActions />
+      {/* Our CTA */}
 
       {/* Start Our Footer */}
       <section className="footer-style1 pt60 pb-0">
@@ -366,4 +348,4 @@ const Home_V10 = () => {
   );
 };
 
-export default Home_V10;
+export default Home_V1;

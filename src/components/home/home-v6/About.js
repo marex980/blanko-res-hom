@@ -15,7 +15,7 @@ const About = () => {
             className="about-box-1 pe-4 mt100 mt0-lg mb30-lg "
             data-aos="fade-left"
           >
-            <h2 className="title mb30">
+            <h2 className="title-color-white mb30">
               Let’s find the right selling option for you
             </h2>
             <p className="text mb25 fz15">
